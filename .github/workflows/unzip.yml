@@ -1,0 +1,17 @@
+name: Unzip ZIP File
+
+on: [push]
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v2
+
+    - name: Install unzip
+      run: sudo apt-get install unzip
+
+    - name: Unzip files
+      run: unzip <ZIPファイル名>.zip -d <解凍先ディレクトリ>
